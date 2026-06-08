@@ -51,7 +51,7 @@ def render_race_table(drivers: list[dict[str, Any]]) -> None:
             return ["color:#FFC906;font-weight:600"] + [""] * (len(row)-1)
         return [""] * len(row)
 
-    st.dataframe(df.style.apply(_style, axis=1), use_container_width=True, hide_index=True)
+    st.dataframe(df.style.apply(_style, axis=1), width='stretch', hide_index=True)
 
 
 # ── Probability Table ──────────────────────────────────────────────────────
@@ -82,7 +82,7 @@ def render_probability_table(prob_rows: list[dict[str, Any]]) -> None:
             return ["color:#FFC906;font-weight:600"] + [""] * (len(row)-1)
         return [""] * len(row)
 
-    st.dataframe(df.style.apply(_style, axis=1), use_container_width=True, hide_index=True)
+    st.dataframe(df.style.apply(_style, axis=1), width='stretch', hide_index=True)
 
 
 # ── Win Probability Bar Chart ──────────────────────────────────────────────
@@ -107,7 +107,7 @@ def render_win_probability_chart(prob_rows: list[dict[str, Any]]) -> None:
         yaxis=dict(autorange="reversed", tickfont=dict(size=13, color="#FFF", family="Barlow Condensed")),
         height=250,
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 # ── Position Tracker ───────────────────────────────────────────────────────
@@ -133,7 +133,7 @@ def render_position_tracker(history_data: dict[str, list[int]]) -> None:
         height=270,
         legend=dict(orientation="h", y=1.08, font=dict(size=11, family="Barlow Condensed")),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 # ── Win % Evolution ────────────────────────────────────────────────────────
@@ -155,7 +155,7 @@ def render_probability_evolution(win_history: dict[str, list[float]]) -> None:
         height=250,
         legend=dict(orientation="h", y=1.08, font=dict(size=11, family="Barlow Condensed")),
     )
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 
 # ── Insights (kept for backward compat — rendering moved to app.py) ────────
