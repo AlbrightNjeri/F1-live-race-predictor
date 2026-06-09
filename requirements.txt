@@ -2,7 +2,7 @@ fastf1==3.5.3
 xgboost==2.1.4
 scikit-learn==1.6.1
 streamlit==1.45.1
-streamlit-autorefresh==1.0.1
+streamlit-autorefresh
 plotly==6.1.1
 pandas==2.2.3
 numpy==1.26.4
